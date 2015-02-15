@@ -15,8 +15,14 @@
       <% @places.each do |place| %>
           <tr>
             <% Place.rendered_fields.each do |f| %>
-                <td><%= place.send(f) %></td>
+                <td>
+                  <%= place.send(f) %>
+                </td>
             <% end %>
+          <td>
+            <%= link_to "view", place_path(place.id) %>
+          </td>
+
           </tr>
       <% end %>
     </table>
